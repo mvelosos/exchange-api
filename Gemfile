@@ -3,10 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# Use for tests
 gem 'rspec-rails', '~> 3.5'
+# Use for rest request
 gem 'rest-client'
+# Use for mock test for requests
 gem 'webmock'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
