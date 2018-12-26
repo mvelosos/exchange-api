@@ -1,6 +1,6 @@
 $(document).ready ->
  
-  $('form').submit ->
+  $('form').keyup ->
     if $('form').attr('action') == '/convert'
       $.ajax '/convert',
           type: 'GET'
