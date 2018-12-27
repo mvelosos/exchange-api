@@ -1,6 +1,7 @@
 require 'rails_helper'
  
 RSpec.describe "Exchange Currency Process", :type => :system, js: true do
+
   it "show exchanged value" do
 
     visit '/'
@@ -11,9 +12,9 @@ RSpec.describe "Exchange Currency Process", :type => :system, js: true do
       fill_in 'amount', with: '10'
     end
 
-    click_button 'CONVERTER'
- 
     # save_and_open_page
-    expect(page).to have_content("value")
+    expect(page).to have_button("inverter")
+
   end
+  
 end

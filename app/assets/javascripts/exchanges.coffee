@@ -1,6 +1,6 @@
 $(document).ready ->
  
-  $('form').keyup ->
+  $('form').on 'keyup change paste click input', ->
     if $('form').attr('action') == '/convert'
       $.ajax '/convert',
           type: 'GET'
@@ -15,3 +15,8 @@ $(document).ready ->
           success: (data, text, jqXHR) ->
             $('#result').val(data.value.toFixed(2))
         return false;
+  
+  $('#inverter').click ->
+    old_source = $("#source_currency").val()
+    $("#source_currency").val($("#target_currency").val())
+    $("#target_currency").val(old_source)
