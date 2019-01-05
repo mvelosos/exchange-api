@@ -12,7 +12,7 @@ class ExchangeService
   def perform
     begin
       if @source_currency == 'BTC' || @target_currency == 'BTC'
-        perform_bitcoin(@source_currency, @target_currency, @amount)
+        perform_bitcoin
       else
         exchange_api_url = Rails.application.credentials[Rails.env.to_sym][:currency_api_url]
         exchange_api_key = Rails.application.credentials[Rails.env.to_sym][:currency_api_key]
@@ -27,7 +27,7 @@ class ExchangeService
     end
   end
 
-  def perform_bitcoin(source_currency, target_currency, amount)
+  def perform_bitcoin
     url_bitcoin = "https://blockchain.info/ticker"
     res_bitcoin = RestClient.get url_bitcoin
 
