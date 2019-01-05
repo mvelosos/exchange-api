@@ -18,6 +18,7 @@
           color: #878d99;
           font-weight: 700;
         }
+
       }
     }
   }
@@ -31,6 +32,10 @@
       margin-top: 30px;
       font-size: 20px;
     }
+
+    .local_currency{
+      margin-left: 25px;
+    }
       
     .form-group {
       select {
@@ -43,7 +48,6 @@
         height: 50px;
       }
     }
-   
    
     #result {
       margin-bottom: 20px;

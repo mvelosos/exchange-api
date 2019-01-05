@@ -8,43 +8,36 @@
     <div class='card-block'>
       <%= form_tag('/convert', method: :get, id: 'exchange_form') do %>
     
-    <div class='container'>
-      <div class='row'>
-
-          <div class='row local_currency'>
-            <div class='col-lg-12 col-md-12'>
-              <div class='form-group'>
-                <p class='title text-center'>Moeda Local</p>
-                <%= select_tag 'source_currency', options_for_select(currency_list, 'BRL'), class: 'form-control', id: 'source_currency' %>
-              
-                <div class='form-group pt-2'>
-                  <input type='number' name='amount' id='amount' class='form-control' placeholder='Quantidade ($10)' step='any' required>
-                </div>
-              </div>
-            </div>
+              <div class='local_currency'>
+          <div class='form-group'>
+            <p class='title'>Moeda Local</p>
+            <%= select_tag 'source_currency', options_for_select(currency_list, 'BRL'), class: 'form-control', id: 'source_currency' %>
           </div>
-                      
-          <div class='row destination_currency pl-3'>
-            <div class='col-lg-12 col-md-12'>
-              <div class='form-group'>
-                <p class='title text-center'>Moeda Pretendida</p>
-                <%= select_tag 'target_currency', options_for_select(currency_list, 'USD'), class: 'form-control', id: 'target_currency'%>
-              
-                <div class='form-group pt-2'>
-                  <input type='text' id='result' name='result' class='form-control' placeholder='Resultado' readonly>
-                </div>
-              </div>
-            </div>
+ 
+          <div class='form-group'>
+            <input type='number' name='amount' id='amount' class='form-control' placeholder='Quantidade ($10)' step='any' required>
           </div>
-
-      </div>
-      <% end %>
-        <div class='text-center'>
-          <button type="button" id="inverter" class="btn btn-default" aria-label="Left Align">
-            <i class="fas fa-sync-alt"></i>
-            Inverter
-          </button>
         </div>
+                    
+        <div class='destination_currency'>
+          <div class='form-group'>
+            <p class='title'>Moeda Pretendida</p>
+            <%= select_tag 'target_currency', options_for_select(currency_list, 'USD'), class: 'form-control', id: 'target_currency'%>
+          </div>
+          <div class='form-group'>
+            <input type='text' id='result' name='result' class='form-control' placeholder='Resultado' readonly>
+          </div>
+        </div>
+        <div>
+
+        </div>
+        <% end %>
+          <div class='text-center'>
+            <button type="button" id="inverter" class="btn btn-default" aria-label="Left Align">
+              <i class="fas fa-sync-alt"></i>
+              Inverter
+            </button>
+          </div>
 
     </div>
     </div>
